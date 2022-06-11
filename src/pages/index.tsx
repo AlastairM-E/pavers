@@ -1,6 +1,9 @@
 import React from "react";
 import "../css/index.css";
-import desertSandal from "../images/baseOfSandal-removebg-preview.png";
+import sideSandal from "../images/side-sandal-remove-bg.png";
+import angleSandal from "../images/angle-sandal-remove-bg.png";
+import frontSandal from "../images/front-sandal-remove-bg.png";
+import baseOfSandal from "../images/baseOfSandal-remove-bg.png";
 import desertBackground from "../images/CalicoBasin.jpg";
 
 const navbarStyles = {
@@ -24,7 +27,7 @@ const sandalStyle = {
   width: 200,
 };
 
-const SandalImage = ({ type }: { type: string }) => {
+const SandalImage = ({ type, src }: { type: string; src: string }) => {
   return (
     <div className={`sandalImage ${type}`}>
       <article className="sandal">
@@ -38,7 +41,7 @@ const SandalImage = ({ type }: { type: string }) => {
           />
         </div>
 
-        <img style={sandalStyle} src={desertSandal} alt="Desert Sandal" />
+        <img style={sandalStyle} src={src} alt="Desert Sandal" />
       </article>
     </div>
   );
@@ -53,10 +56,10 @@ const IndexPage = () => {
         src={desertBackground}
         alt="Mojave desert background"
       />
-      <SandalImage type="backSandal" />
-      <SandalImage type="frontSandal" />
-      <SandalImage type="angleSandal" />
-      <SandalImage type="sideOnSandal" />
+      <SandalImage type="sideOnSandal" src={sideSandal} />
+      <SandalImage type="frontSandal" src={frontSandal} />
+      <SandalImage type="angleSandal" src={angleSandal} />
+      <SandalImage type="backSandal" src={baseOfSandal} />
     </main>
   );
 };
