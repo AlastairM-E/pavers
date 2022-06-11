@@ -15,16 +15,17 @@ const sandalHazyBackgroundStyle = {
   background: "black",
   opacity: 0.3,
   zIndex: 1,
-  height: 200,
-  width: 200,
+  height: 220,
+  width: 220,
 };
 
 const sandalStyle = {
   position: "absolute",
-  top: "7.5%",
+  top: "5%",
   left: "0%",
   height: 200,
   width: 200,
+  padding: "5px",
 };
 
 const SandalImage = ({ type, src }: { type: string; src: string }) => {
@@ -41,7 +42,12 @@ const SandalImage = ({ type, src }: { type: string; src: string }) => {
           />
         </div>
 
-        <img style={sandalStyle} src={src} alt="Desert Sandal" />
+        <img
+          className="fadesIn"
+          style={sandalStyle}
+          src={src}
+          alt="Desert Sandal"
+        />
       </article>
     </div>
   );

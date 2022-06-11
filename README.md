@@ -56,9 +56,9 @@ Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cl
 ## Tasks
 
 - [x] make the desert image the background for the entire piece.
-- [] Deploy it.
-- [] remove background for each of the Sandals.
-- [] get each sandal in place
-- [] Sandal fad in.
+- [x] Deploy it.
+- [x] remove background for each of the Sandals.
+- [x] get each sandal in place
+- [] Sandals fad in, when background has loaded.
 - [] Truspilot reviews.
 - [] Tumbleweed animation.

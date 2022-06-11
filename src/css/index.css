@@ -32,16 +32,45 @@ nav {
 .sideOnSandal {
   grid-column: 1/ 4;
   grid-row: 2/10;
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
 }
 .frontSandal {
   grid-column: 4/7;
   grid-row: 2/10;
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.75s;
 }
 .angleSandal {
   grid-column: 7/10;
   grid-row: 2/10;
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+  animation-delay: 1.5s;
 }
 .backSandal {
   grid-column: 10/13;
   grid-row: 2/10;
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+  animation-delay: 2.25s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
