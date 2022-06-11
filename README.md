@@ -59,6 +59,8 @@ Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cl
 - [x] Deploy it.
 - [x] remove background for each of the Sandals.
 - [x] get each sandal in place
-- [] Sandals fad in, when background has loaded.
+- [x] Sandals fad in, when background has loaded.
 - [] Truspilot reviews.
 - [] Tumbleweed animation.
+- [] refactor code.
+- [] look into wind animation.

@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/index.css";
+import trustpilot from "../images/trustpilot.svg";
 import sideSandal from "../images/side-sandal-remove-bg.png";
 import angleSandal from "../images/angle-sandal-remove-bg.png";
 import frontSandal from "../images/front-sandal-remove-bg.png";
@@ -9,6 +10,7 @@ import desertBackground from "../images/CalicoBasin.jpg";
 const navbarStyles = {
   textAlign: "center",
   borderBottom: "2px solid black",
+  fontSize: "2em",
 };
 
 const sandalHazyBackgroundStyle = {
@@ -53,6 +55,28 @@ const SandalImage = ({ type, src }: { type: string; src: string }) => {
   );
 };
 
+const TrustpilotReview = ({
+  children,
+  reviewer,
+}: {
+  children: any;
+  reviewer: string;
+}) => {
+  return (
+    <div className="review">
+      <img
+        className="trustpilot-stars"
+        src={trustpilot}
+        alt="TrustPilot 5 star reviews"
+        width="100px"
+        height="auto"
+      />
+      <span className="reviewer">{reviewer}</span>
+      <span className="review-text">{children}</span>
+    </div>
+  );
+};
+
 const IndexPage = () => {
   return (
     <main id="grid">
@@ -66,6 +90,20 @@ const IndexPage = () => {
       <SandalImage type="frontSandal" src={frontSandal} />
       <SandalImage type="angleSandal" src={angleSandal} />
       <SandalImage type="backSandal" src={baseOfSandal} />
+      <div className="reviews">
+        <TrustpilotReview reviewer="Wiljanew">
+          "Very Comfortable good fit =- worn throughout 7 day holiday with
+          absolute ease"
+        </TrustpilotReview>
+        <TrustpilotReview reviewer="🌹🌹🌹">
+          "Bought these for holiday for a change to trainers. Think they'll be
+          cooler and comfortable as the temperature increases"
+        </TrustpilotReview>
+        <TrustpilotReview reviewer="Brenda Livesey">
+          "very good quality sandals, excellent comfort. Will definitely be
+          buying another colour if available"
+        </TrustpilotReview>
+      </div>
     </main>
   );
 };
