@@ -1,5 +1,4 @@
 import React from "react";
-// import "../css/index.css";
 import { StaticImage } from "gatsby-plugin-image";
 import TrustpilotStars from "../images/TrustpilotStars";
 
