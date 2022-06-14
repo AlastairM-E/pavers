@@ -1,36 +1,9 @@
 import React from "react";
 import "../css/index.css";
-import trustpilot from "../images/trustpilot.svg";
-import sideSandal from "../images/side-sandal-remove-bg.png";
-import angleSandal from "../images/angle-sandal-remove-bg.png";
-import frontSandal from "../images/front-sandal-remove-bg.png";
-import baseOfSandal from "../images/baseOfSandal-remove-bg.png";
-import desertBackground from "../images/CalicoBasin.jpg";
+import { StaticImage } from "gatsby-plugin-image";
+import TrustpilotStars from "../images/TrustpilotStars";
 
-const navbarStyles = {
-  textAlign: "center",
-  borderBottom: "2px solid black",
-  fontSize: "2em",
-};
-
-const sandalHazyBackgroundStyle = {
-  background: "black",
-  opacity: 0.3,
-  zIndex: 1,
-  height: 220,
-  width: 220,
-};
-
-const sandalStyle = {
-  position: "absolute",
-  top: "5%",
-  left: "0%",
-  height: 200,
-  width: 200,
-  padding: "5px",
-};
-
-const SandalImage = ({ type, src }: { type: string; src: string }) => {
+const SandalImage = ({ type, children }: { type: string; children: any }) => {
   return (
     <div className={`sandalImage ${type}`}>
       <article className="sandal">
@@ -38,18 +11,9 @@ const SandalImage = ({ type, src }: { type: string; src: string }) => {
           className="hazyBackgroundContainer"
           style={{ border: "2px solid white" }}
         >
-          <div
-            className="sandalHazyBackground"
-            style={sandalHazyBackgroundStyle}
-          />
+          <div className="sandalHazyBackground" />
         </div>
-
-        <img
-          className="fadesIn"
-          style={sandalStyle}
-          src={src}
-          alt="Desert Sandal"
-        />
+        {children}
       </article>
     </div>
   );
@@ -64,13 +28,7 @@ const TrustpilotReview = ({
 }) => {
   return (
     <div className="review">
-      <img
-        className="trustpilot-stars"
-        src={trustpilot}
-        alt="TrustPilot 5 star reviews"
-        width="100px"
-        height="auto"
-      />
+      <TrustpilotStars />
       <span className="reviewer">{reviewer}</span>
       <span className="review-text">{children}</span>
     </div>
@@ -79,32 +37,75 @@ const TrustpilotReview = ({
 
 const IndexPage = () => {
   return (
-    <main id="grid">
-      <nav style={navbarStyles}>Adjustable Summer Sandals</nav>
-      <img
-        className="sandalBackground"
-        src={desertBackground}
-        alt="Mojave desert background"
-      />
-      <SandalImage type="sideOnSandal" src={sideSandal} />
-      <SandalImage type="frontSandal" src={frontSandal} />
-      <SandalImage type="angleSandal" src={angleSandal} />
-      <SandalImage type="backSandal" src={baseOfSandal} />
-      <div className="reviews">
-        <TrustpilotReview reviewer="Wiljanew">
-          "Very Comfortable good fit =- worn throughout 7 day holiday with
-          absolute ease"
-        </TrustpilotReview>
-        <TrustpilotReview reviewer="🌹🌹🌹">
-          "Bought these for holiday for a change to trainers. Think they'll be
-          cooler and comfortable as the temperature increases"
-        </TrustpilotReview>
-        <TrustpilotReview reviewer="Brenda Livesey">
-          "very good quality sandals, excellent comfort. Will definitely be
-          buying another colour if available"
-        </TrustpilotReview>
-      </div>
-    </main>
+    <>
+      <main id="grid">
+        <nav>Adjustable Summer Sandals</nav>
+        <StaticImage
+          className="sandalBackground"
+          src="../images/CalicoBasin.jpg"
+          placeholder="blurred"
+          alt="Mojave desert background"
+        />
+        <SandalImage type="sideOnSandal">
+          <StaticImage
+            className="fadesIn"
+            src="../images/side-sandal-remove-bg.png"
+            alt="Desert Sandal"
+            placeholder="none"
+          />
+        </SandalImage>
+        <SandalImage type="frontSandal">
+          <StaticImage
+            className="fadesIn"
+            src="../images/front-sandal-remove-bg.png"
+            alt="Desert Sandal"
+            placeholder="none"
+          />
+        </SandalImage>
+        <SandalImage type="angleSandal">
+          <StaticImage
+            className="fadesIn"
+            src="../images/angle-sandal-remove-bg.png"
+            alt="Desert Sandal"
+            placeholder="none"
+          />
+        </SandalImage>
+        <SandalImage type="backSandal">
+          <StaticImage
+            className="fadesIn"
+            src="../images/baseOfSandal-remove-bg.png"
+            alt="Desert Sandal"
+            placeholder="none"
+          />
+        </SandalImage>
+        <div className="reviews">
+          <TrustpilotReview reviewer="Wiljanew">
+            "Very Comfortable good fit =- worn throughout 7 day holiday with
+            absolute ease"
+          </TrustpilotReview>
+          <TrustpilotReview reviewer="🌹🌹🌹">
+            "Bought these for holiday for a change to trainers. Think they'll be
+            cooler and comfortable as the temperature increases"
+          </TrustpilotReview>
+          <TrustpilotReview reviewer="Brenda Livesey">
+            "very good quality sandals, excellent comfort. Will definitely be
+            buying another colour if available"
+          </TrustpilotReview>
+        </div>
+
+        <section className="product-info-section">
+          <div>
+            <h2>Product Info</h2>
+            <ul>
+              <li>Size: 7 | 8 | 9 | 10 | 11.</li>
+              <li>Price: £34.99.</li>
+              <li>Color: Brown | Dark grey.</li>
+            </ul>
+            <button className="buy-now-button">Buy Now</button>
+          </div>
+        </section>
+      </main>
+    </>
   );
 };
 
